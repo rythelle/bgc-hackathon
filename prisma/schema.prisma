@@ -13,7 +13,7 @@ model Cards {
   updated_at DateTime @default(now())
   title      String
   body       String
-  date       DateTime
+  date       String
   image_path String?
 
   @@map("cards")

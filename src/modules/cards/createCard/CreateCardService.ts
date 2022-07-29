@@ -13,7 +13,7 @@ export class CreateCardService {
       data: {
         title,
         body,
-        date: new Date(date),
+        date,
         image_path,
       },
     });
