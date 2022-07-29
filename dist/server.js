@@ -6,10 +6,13 @@ require("express-async-errors");
 
 var _routes = require("./routes");
 
+var _cors = _interopRequireDefault(require("cors"));
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 const app = (0, _express.default)();
 app.use(_express.default.json());
+app.use((0, _cors.default)());
 app.use(_routes.routes);
 app.use((err, request, response, next) => {
   if (err instanceof Error) {
@@ -23,4 +26,4 @@ app.use((err, request, response, next) => {
     message: "Internal server error"
   });
 });
-app.listen(process.env.PORT || 3000, () => console.log("Server is running in http://localhost:3000"));
+app.listen(process.env.PORT || 3000, () => console.log("Server is running"));
