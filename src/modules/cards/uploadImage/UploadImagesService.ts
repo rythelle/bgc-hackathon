@@ -8,20 +8,21 @@ interface IRequest {
 
 export class UploadImagesService {
   async execute({ id, images_name }: IRequest): Promise<void> {
-    const tmpFolder = resolve(__dirname, '..', '..', '..', 'tmp');
+    const tmpFolder = resolve(__dirname, '..', '..', '..', '..', 'tmp');
 
-    cloudinary.v2.uploader.upload(`${tmpFolder}/${images_name}`, { upload_preset: 'my_preset' }, (error, result) => {
-      console.log(result, error);
-    });
-
-    await prisma.cards.update({
-      data: {
-        image_path: `${tmpFolder}/${images_name}`,
-      },
-      where: {
-        id,
-      },
-    });
+    await cloudinary.v2.uploader
+      .upload(`${tmpFolder}\\${images_name}`)
+      .then(async (result) => {
+        await prisma.cards.update({
+          data: {
+            image_path: result.url,
+          },
+          where: {
+            id,
+          },
+        });
+      })
+      .catch((error) => console.log(error));
 
     return;
   }
