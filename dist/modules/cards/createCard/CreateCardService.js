@@ -12,14 +12,14 @@ class CreateCardService {
     title,
     body,
     date,
-    image
+    image_path
   }) {
     await _prismaClient.prisma.cards.create({
       data: {
         title,
         body,
         date: new Date(date),
-        image
+        image_path
       }
     });
     return;

@@ -4,17 +4,17 @@ interface ICreateCard {
   title: string;
   body: string;
   date: Date;
-  image: string;
+  image_path: string;
 }
 
 export class CreateCardService {
-  async execute({ title, body, date, image }: ICreateCard) {
+  async execute({ title, body, date, image_path }: ICreateCard) {
     await prisma.cards.create({
       data: {
         title,
         body,
         date: new Date(date),
-        image,
+        image_path,
       },
     });
 

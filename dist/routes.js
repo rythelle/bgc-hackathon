@@ -9,7 +9,7 @@ var _express = require("express");
 
 var _multer = _interopRequireDefault(require("multer"));
 
-var _upload = _interopRequireDefault(require("../config/upload"));
+var _upload = _interopRequireDefault(require("./config/upload"));
 
 var _CreateCardController = require("./modules/cards/createCard/CreateCardController");
 

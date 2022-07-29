@@ -1,6 +1,6 @@
 import { Router } from 'express';
 import multer from 'multer';
-import uploadConfig from '../config/upload';
+import uploadConfig from './config/upload';
 import { CreateCardController } from './modules/cards/createCard/CreateCardController';
 import { DeleteCardController } from './modules/cards/deleteCard/DeleteCardController';
 import { FindCardController } from './modules/cards/findCard/FindCardController';

@@ -13,14 +13,14 @@ class CreateCardController {
       title,
       body,
       date,
-      image
+      image_path
     } = request.body;
     const createCardService = new _CreateCardService.CreateCardService();
     await createCardService.execute({
       title,
       body,
       date,
-      image
+      image_path
     });
     return response.status(201).send();
   }
