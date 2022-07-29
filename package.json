@@ -5,7 +5,7 @@
   "scripts": {
     "build": "babel src --extensions \".js,.ts\" --out-dir dist --copy-files",
     "dev": "ts-node-dev --exit-child --transpile-only --ignore-watch node_modules src/server.ts",
-    "start": "node /app/dist/src/server.js"
+    "start": "node dist/src/server.js"
   },
   "license": "MIT",
   "devDependencies": {
