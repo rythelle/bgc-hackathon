@@ -1,0 +1,2 @@
+-- AlterTable
+ALTER TABLE "cards" ALTER COLUMN "date" SET DATA TYPE TEXT;
